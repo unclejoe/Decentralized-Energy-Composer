@@ -4,64 +4,64 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="addResidentModalLabel">Add Resident</h4>
+        <h4 class="modal-title" id="addResidentModalLabel">添加居民</h4>
       </div>
       <form [formGroup]="myForm">
         <div class="modal-body">
             <div class="form-group text-left">
-              <label for="residentID">Resident ID</label>
+              <label for="residentID">居民ID</label>
                 <input formControlName="residentID" type="text" class="form-control">
-                </div>      
+                </div>
             <div class="form-group text-left">
-              <label for="firstName">First Name</label>  
-                <input formControlName="firstName" type="text" class="form-control">          
-            </div>
-          
-            <div class="form-group text-left">
-              <label for="lastName">Last Name</label>  
-                <input formControlName="lastName" type="text" class="form-control">          
+              <label for="firstName">名字</label>
+                <input formControlName="firstName" type="text" class="form-control">
             </div>
 
             <div class="form-group text-left">
-              <label for="coinsValue">Coins Balance</label>  
-                <input formControlName="coinsValue" type="text" class="form-control">          
+              <label for="lastName">姓氏</label>
+                <input formControlName="lastName" type="text" class="form-control">
             </div>
 
             <div class="form-group text-left">
-              <label for="energyValue">Energy Value (meter reading)</label>  
-                <input formControlName="energyValue" type="text" class="form-control">          
+              <label for="coinsValue">虚拟货币余额</label>
+                <input formControlName="coinsValue" type="text" class="form-control">
             </div>
 
             <div class="form-group text-left">
-              <label for="energyUnits">Energy Units</label>  
-              
+              <label for="energyValue">输入生产的电量值 (或计量表自动读取)</label>
+                <input formControlName="energyValue" type="text" class="form-control">
+            </div>
+
+            <div class="form-group text-left">
+              <label for="energyUnits">电量单位</label>
+
               <div>
               <select name="energyUnits" formControlName="energyUnits">
-                <option value="kwh">kWh</option>                
+                <option value="kwh">kWh</option>
               </select>
-              </div>      
+              </div>
             </div>
 
             <div class="form-group text-left">
-              <label for="cashValue">Cash Value</label>  
-                <input formControlName="cashValue" type="text" class="form-control">          
+              <label for="cashValue">现金值</label>
+                <input formControlName="cashValue" type="text" class="form-control">
             </div>
 
             <div class="form-group text-left">
-              <label for="cashCurrency">Cash Currency</label>  
-              
+              <label for="cashCurrency">现金币种</label>
+
               <div>
               <select name="cashCurrency" formControlName="cashCurrency">
-                <option value="USD">USD</option>                
+                <option value="USD">USD</option>
               </select>
-              </div>        
+              </div>
             </div>
 
-                
+
         </div>
         <div class="modal-footer">
-          <button (click)="addResident(myForm);" type="submit" class="btn btn-success" data-dismiss="modal">Submit</button>
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button (click)="addResident(myForm);" type="submit" class="btn btn-success" data-dismiss="modal">确定</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
         </div>
       </form>
     </div>
@@ -74,27 +74,27 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="updateResidentModalLabel">Update Asset</h4>
+        <h4 class="modal-title" id="updateResidentModalLabel">更新资产</h4>
       </div>
       <form [formGroup]="myForm">
         <div class="modal-body">
             <div class="form-group text-left">
               <label for="residentID">ID</label>
-                <input [ngModel]="residentID"formControlName="residentID" type="text" class="form-control">            
-            </div>          
+                <input [ngModel]="residentID"formControlName="residentID" type="text" class="form-control">
+            </div>
             <div class="form-group text-left">
-              <label for="firstName">First Name</label>
-                <input [ngModel]="firstName"formControlName="firstName" type="text" class="form-control">              
-            </div>          
+              <label for="firstName">名字</label>
+                <input [ngModel]="firstName"formControlName="firstName" type="text" class="form-control">
+            </div>
             <div class="form-group text-left">
-              <label for="lastName">Last Name</label>
+              <label for="lastName">姓氏</label>
                   <textarea [ngModel]="lastName" formControlName="lastName" class="form-control" rows="3"></textarea>
             </div>
-              
+
         </div>
         <div class="modal-footer">
-          <button (click)="updateResident(myForm)" type="submit" class="btn btn-success" data-dismiss="modal">Submit</button>
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button (click)="updateResident(myForm)" type="submit" class="btn btn-success" data-dismiss="modal">确定</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
         </div>
       </form>
     </div>
@@ -108,15 +108,15 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="deleteResidentModalLabel">Delete Asset</h4>
+        <h4 class="modal-title" id="deleteResidentModalLabel">删除资产</h4>
       </div>
       <form [formGroup]="myForm" (ngSubmit)="deleteResident()">
         <div class="modal-body">
-          Are you sure you want to delete this asset?
+          确定删除此资产吗?
         </div>
         <div class="modal-footer">
-          <button (click)="deleteResident()" type="submit" class="btn btn-danger" data-dismiss="modal">Yes</button>
-          <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+          <button (click)="deleteResident()" type="submit" class="btn btn-danger" data-dismiss="modal">是</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">否</button>
         </div>
       </form>
     </div>
@@ -133,13 +133,13 @@
 		<strong>Error:</strong> {{errorMessage}}
 	</div>
   <div class="row">
-   
-      <h1 class="heading">Residents </h1>
+
+      <h1 class="heading">居民 </h1>
   </div>
 
  <div class="row">
     <div class="col-md-12 text-right">
-      <button (click)="resetForm()" type="button" class="btn btn-primary" data-toggle="modal" data-target="#addResidentModal">Add Resident</button>
+      <button (click)="resetForm()" type="button" class="btn btn-primary" data-toggle="modal" data-target="#addResidentModal">添加居民</button>
     </div>
   </div>
   <br>
@@ -148,33 +148,33 @@
       <table class="table table-bordered table-responsive table-hover">
         <thead class="thead">
           <tr class="thead-cols">
-            
+
                 <th class="bc">ID</th>
-            
-                <th class="bc">First Name</th>
-            
-                <th class="bc">Last Name</th>  
 
-                <th class="bc">Coins Balance</th>  
+                <th class="bc">姓氏</th>
 
-                <th class="bc">Energy Value</th>
+                <th class="bc">名字</th>
 
-                <th class="bc">Energy Units</th>
+                <th class="bc">虚拟货币余额</th>
 
-                <th class="bc">Cash Balance</th>
+                <th class="bc">生产电量值</th>
 
-                <th class="bc">Cash Currency</th>
+                <th class="bc">电量单位</th>
 
-                <th class="bc">Actions</th>       
+                <th class="bc">现金余额</th>
+
+                <th class="bc">现金币种</th>
+
+                <th class="bc">操作</th>
           </tr>
         </thead>
         <tbody>
           <tr *ngFor="let resident of allResidents">
-          
+
                 <td>{{resident.residentID}}</td>
-            
+
                 <td>{{resident.firstName}}</td>
-            
+
                 <td>{{resident.lastName}}</td>
 
                 <td>{{resident.coinsValue}}</td>
@@ -186,12 +186,12 @@
                 <td>{{resident.cashValue}}</td>
 
                 <td>{{resident.cashCurrency}}</td>
-           
+
             <td>
 
-              <button (click)="getForm(resident.residentID);" type="button" class="btn btn-success" data-toggle="modal" data-target="#updateResidentModal">Update</button>
+              <button (click)="getForm(resident.residentID);" type="button" class="btn btn-success" data-toggle="modal" data-target="#updateResidentModal">更新</button>
 
-              <button (click)="setId(resident.residentID);" type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteResidentModal">Delete</button>
+              <button (click)="setId(resident.residentID);" type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteResidentModal">删除</button>
 
             </td>
           </tr>

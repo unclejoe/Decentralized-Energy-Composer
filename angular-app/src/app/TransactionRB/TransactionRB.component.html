@@ -3,11 +3,11 @@
 <div class="container">
 
   <div *ngIf="errorMessage" class="alert alert-danger" role="alert">
-		<strong>Error:</strong> {{errorMessage}}
+		<strong>错误:</strong> {{errorMessage}}
 	</div>
 
   <div class="row">
-      <h1>Resident to Bank </h1>  
+      <h1>居民 对 银行 </h1>
   </div>
 
   <div class="row">
@@ -17,36 +17,36 @@
   <div class="row RR">
     <div *ngIf="transactionFrom" class="col-md-offset-3 col-md-6">
       <div class="panel panel-default">
-        <div class="panel-heading"> <strong>Enter Transaction Info </strong>
+        <div class="panel-heading"> <strong>输入交易信息 ：</strong>
         </div>
         <div class="panel-body">
           <form [formGroup]="myForm">
 
-            <p><strong>Rate: {{bankCoinsPerCash}}  Coins / USD </strong></p>
+            <p><strong>汇率: {{bankCoinsPerCash}}  Coins / USD </strong></p>
 
-            <p>Action:         
+            <p>交易:
               <select name="actions" formControlName="action">
                 <option value="getCash">Get Cash (USD) for Coins</option>
                 <option value="getCoins">Get Coins for Cash (USD)</option>
               </select>
             </p>
-            
-            <p>Resident: 
+
+            <p>居民:
               <select name="residents" formControlName="formResidentID">
                 <option *ngFor="let resident of allResidents" value="{{resident.residentID}}">{{resident.residentID}}</option>
               </select>
-            </p>           
+            </p>
 
-            <p>Bank: 
+            <p>银行:
               <select name="banks" formControlName="formBankID" >
                 <option *ngFor="let bank of allBanks" value="{{bank.bankID}}">{{bank.bankID}}</option>
               </select>
             </p>
 
-            <p>Cash value (USD):
+            <p>现金 (USD):
               <input formControlName="value" type="number" step='any' class="form-control inlineInput">
             </p>
-  
+
             </form>
         </div>
       </div>
@@ -54,10 +54,10 @@
 
     <div *ngIf="!transactionFrom" class="col-md-offset-3 col-md-6">
       <div class="panel panel-default">
-        <div class="panel-heading"><strong>Transaction Executed</strong></div>
+        <div class="panel-heading"><strong>交易执行完毕</strong></div>
         <div class="panel-body">
           <form [formGroup]="myForm">
-            <p>Transaction ID: {{transactionID}}</p>             
+            <p>Transaction ID: {{transactionID}}</p>
           </form>
         </div>
       </div>
@@ -65,10 +65,10 @@
 
   </div>
 
-  <div class="row">  
+  <div class="row">
     <div *ngIf="transactionFrom" class="col-md-offset-4 col-md-4">
-    <button (click)="execute(form);" type="button" class="btn btn-success" data-toggle="modal" >Execute Transaction</button>
-	  
+    <button (click)="execute(form);" type="button" class="btn btn-success" data-toggle="modal" >执行交易</button>
+
     </div>
   </div>
 

@@ -1,80 +1,80 @@
 
 
 <div class="container">
-  <div class="row">  
-     <h1 class="heading">Welcome to Decentralized Energy using Hyperledger Composer</h1>
-  </div> 
+  <div class="row">
+     <h1 class="heading">欢迎体验由胜日光景新能源基于 Hyperledger 区块链技术构建的去中心化能源交易演示平台</h1>
+  </div>
 
   <div class="row">
     <br>
-  </div> 
+  </div>
 
-  <div class="row bodytext">       
+  <div class="row bodytext">
       <div class="col-md-12">
-        <p class=""> This Blockchain application demonstrates energy sharing on a network among 'Residents' on a grid. The energy trade is based on exchanging coins for energy provided. The network also includes 'Utility Companies' to trade excess energy with or obtain energy from, and 'Banks' to exchange cash (fiat money) for coins.  </p>
-        <p class=""> Find more detail <a [routerLink]="['/About']" > about the application. </a> </p>
+        <p class=""> 本区块链应用程序演示了微电网中“居民”之间的网络电力能量共享。能源交易的基础是为能源交换提供虚拟货币、法定货币等账务处理与记录。该网络还包括“电网公司”，以交易过剩的能源，或获得能源，以及“银行”将现金(法定货币)兑换成虚拟货币。 </p>
+        <p class=""> 更多细节请查看我们的 <a [routerLink]="['/About']" > 详细技术资料及试用我们的交易流程。 </a> </p>
 
       </div>
-    </div> 
+    </div>
 
   <div class="row">
     <br>
-  </div> 
+  </div>
 
   <div class="row">
-    <h4> Step1 - Create and Update Participants </h4>
-  </div> 
+    <h4> 第一步 - 创建及更新交易参与方 </h4>
+  </div>
     <div class="row">
     <div class="participant col-md-4">
-      <p> <strong>Residents</strong> own three assets: Energy, Coins and Cash. They can trade with fellow residents, banks, and utility companies.</p>
-      <a [routerLink]="['/Resident']" class=participantButton>Residents</a> 
-    </div>      
-    
-    <div class="participant col-md-4">
-      <p> <strong>Banks</strong> on the network own two assets: Cash and Coins. They can trade with residents, who can buy or sell coins for cash. </p>
-      <a [routerLink]="['/Bank']" class="participantButton">Banks</a>
-    </div>   
+      <p> <strong>居民/个人</strong> 拥有三种类型的资产: 清洁电力能源, 虚拟货币和现金。 他们可以在微电网中同其他居民、银行、电网公司进行各类资产交易。</p>
+      <a [routerLink]="['/Resident']" class=participantButton>居民/个人</a>
+    </div>
 
     <div class="participant col-md-4">
-      <p> <strong>Utility Companies</strong> own two assets: Energy and Coins. They can trade with residents, who can buy or sell energy for coins. </p>
-      <a [routerLink]="['/Utility']" class="participantButton">Utility Companies</a>
-    </div> 
-  
-  </div> 
+      <p> <strong>银行</strong> 拥有两种类型资产: 现金和虚拟货币。 他们可以提供居民/个人之间进行现金和虚拟货币交易。                               </p>
+      <a [routerLink]="['/Bank']" class="participantButton">银行</a>
+    </div>
+
+    <div class="participant col-md-4">
+      <p> <strong>电网公司</strong> 拥有两种类型资产: 电力资源和虚拟货币。他们可以同居民/个人之间利用虚拟货币进行电力能源交易。</p>
+      <a [routerLink]="['/UtilityCompany']" class="participantButton">电网公司</a>
+    </div>
+
+  </div>
 
   <div class="row">
     <br>
-  </div> 
+  </div>
 
 
   <div class="row">
-    <h4> Step2 - Execute Transactions </h4>
-  </div> 
-
-  <div class="row"> 
-        
-    <div class="participant col-md-4">
-      <p> Execute a transaction between Residents by exchanging Coins for Energy </p>
-      <a [routerLink]="['/TransactionRR']" class=participantButton>Resident to Resident</a> 
-    </div>           
-
-    <div class="participant col-md-4">
-      <p> Execute a transaction between a Resident and a Bank by exchanging Coins for Cash </p>
-      <a [routerLink]="['/TransactionRB']" class="participantButton">Resident to Bank</a>
-    </div> 
-    
-    <div class="participant col-md-4">
-      <p> Execute a transaction between a Resident and a Utility Company by exchanging Coins for Energy </p>
-      <a [routerLink]="['/TransactionRU']" class="participantButton">Resident to Utility</a>
-    </div>   
-    
-  </div> 
+    <h4> 第二步 - 执行交易 </h4>
+  </div>
 
   <div class="row">
-    <br>
-  </div> 
+
+    <div class="participant col-md-4">
+      <p> 利用虚拟货币在居民与居民之间交易电力能源。 </p>
+      <a [routerLink]="['/TransactionRR']" class=participantButton>居民 对 居民</a>
+    </div>
+
+    <div class="participant col-md-4">
+      <p> 居民与银行间虚拟货币与现金兑换交易。 </p>
+      <a [routerLink]="['/TransactionRB']" class="participantButton">居民 对 银行</a>
+    </div>
+
+    <div class="participant col-md-4">
+      <p> 利用虚拟货币在居民与电力公司之间交易电力能源。 </p>
+      <a [routerLink]="['/TransactionRU']" class="participantButton">居民 对 电力公司</a>
+    </div>
+
+  </div>
+
   <div class="row">
     <br>
-  </div> 
+  </div>
+  <div class="row">
+    <br>
+  </div>
 
 </div>

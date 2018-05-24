@@ -7,7 +7,7 @@
 	</div>
 
   <div class="row">
-      <h2> Resident to Resident Transaction </h2>
+      <h2> 居民 对 居民 电力能源交易 </h2>
   </div>
 
   <div class="row">
@@ -17,29 +17,29 @@
   <div class="row RR">
     <div *ngIf="transactionFrom" class="col-md-offset-3 col-md-6">
       <div class="panel panel-default">
-        <div class="panel-heading"><strong>Enter Transaction Info</strong></div>
+        <div class="panel-heading"><strong>输入交易信息：</strong></div>
         <div class="panel-body">
-        <p>Billing Period: 2:00 pm - 4:00 pm</p>
+        <p>账单时间区间: 2:00 pm - 4:00 pm</p>
           <form [formGroup]="myForm">
-            
-            <p>Producer:           
+
+            <p>电力生产者:
               <select name="residents" formControlName="producerResidentID" >
                 <option *ngFor="let resident of allResidents" value="{{resident.residentID}}">{{resident.residentID}}</option>
               </select>
-              </p> 
-              
+              </p>
 
-              <p>Consumer: 
+
+              <p>电力消费者:
               <select name="residents" formControlName="consumerResidentID" >
                 <option *ngFor="let resident of allResidents" value="{{resident.residentID}}">{{resident.residentID}}</option>
               </select>
               </p>
-              
 
-            <p>Energy exchanged (kwh): <input formControlName="energyValue" type="number" step='any' class="form-control inlineInput">
+
+            <p>交易的电力能源 (kwh): <input formControlName="energyValue" type="number" step='any' class="form-control inlineInput">
               </p>
-            
-            <p>Rate: <strong>{{residentCoinsPerEnergy}} Coins / kwh </strong>
+
+            <p>价格: <strong>{{residentCoinsPerEnergy}} Coins / kwh </strong>
             </p>
             <br>
             </form>
@@ -49,19 +49,19 @@
 
     <div *ngIf="!transactionFrom" class="col-md-offset-3 col-md-6">
       <div class="panel panel-default">
-        <div class="panel-heading"><strong>Transaction Executed</strong></div>
+        <div class="panel-heading"><strong>交易已执行</strong></div>
         <div class="panel-body">
-        <p>Billing Period: 2:00 pm - 4:00 pm</p>
+        <p>账单时间区间: 2:00 pm - 4:00 pm</p>
           <form [formGroup]="myForm">
             <p>Transaction ID: {{transactionID}}</p>
             <br>
-            <!-- p>Producer: {{producerResidentID.value}}</p> 
+            <!-- p>Producer: {{producerResidentID.value}}</p>
             <p>Energy Provided ID: {{energyProvidedID}}</p>
-            <p>Coins Credited ID: {{coinsCreditID}}</p>             
+            <p>Coins Credited ID: {{coinsCreditID}}</p>
            <br>
-            <p>Consumer: {{consumerResidentID.value}}</p>           
+            <p>Consumer: {{consumerResidentID.value}}</p>
             <p>Energy Received ID: {{energyReceivedID}}</p>
-            <p>Coins Debited ID: {{coinsDebitID}}</p>             
+            <p>Coins Debited ID: {{coinsDebitID}}</p>
            <br>
             <p>Energy exchanged: {{energyValue.value}}</p>
             <p>Coins exchanged: {{coinsValue.value}}</p-->
@@ -72,9 +72,9 @@
 
   </div>
 
-  <div class="row">  
+  <div class="row">
     <div *ngIf="transactionFrom" class="col-md-offset-4 col-md-4">
-      <button (click)="execute(form);" type="button" class="btn btn-success" data-toggle="modal" >Execute Transaction</button>	  
+      <button (click)="execute(form);" type="button" class="btn btn-success" data-toggle="modal" >执行交易</button>
     </div>
   </div>
 
